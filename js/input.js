@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         input.focus();
     })
     input.addEventListener('keyup', (key) => {
-        console.log(key.key);
         if (key.key == 'Enter') {
             let command = input.value;
             input.value = '';
-            run(command, output);
+            if (command) {
+                run(command, output);
+            }
         }
     })
 })
