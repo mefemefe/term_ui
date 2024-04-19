@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.cli {
+    font-size: 1.75em;
+    display: flex;
+}
+
+#input {
+    margin-left: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    background-color: black;
+    border: 0;
+    outline: none;
+    color: #00FF00;
+    font-family: monospace;
+    caret: #00FF00, auto;
+}
