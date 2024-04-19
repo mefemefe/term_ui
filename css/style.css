@@ -13,11 +13,12 @@ body {
 #input {
     margin-left: 0.5em;
     font-size: 1em;
+    font-weight: 800;
     width: 100%;
     background-color: black;
     border: 0;
     outline: none;
     color: #00FF00;
     font-family: monospace;
-    caret: #00FF00, auto;
+    caret-color: #00FF00;
 }

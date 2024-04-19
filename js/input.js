@@ -1,17 +1,4 @@
-const commands = {
-    "help": "hi",
-    "exit": "bye"
-}
-
-function run(text, output) {
-    let command = commands[text];
-    if (command) {
-        output.innerText = 'nice';
-    } else {
-        let message = `Command not recognized, enter '?' to get a list of commands.`;
-        output.innerText = message;
-    }
-}
+import { run } from "./command.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
