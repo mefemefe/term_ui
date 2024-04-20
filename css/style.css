@@ -10,6 +10,11 @@ body {
     display: flex;
 }
 
+#date {
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
 #input {
     margin-left: 0.5em;
     font-size: 1em;
@@ -24,5 +29,5 @@ body {
 }
 
 #output {
-    font-style: italic;
+    color: rgb(164, 244, 164);
 }

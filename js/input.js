@@ -1,9 +1,10 @@
 import { run } from "./command.js";
+import { inputId, outputId } from "./elemIds.js";
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    let input = document.getElementById('input');
-    let output = document.getElementById('output');
+window.addEventListener('DOMContentLoaded', () => {
+    let input = document.getElementById(inputId);
+    let output = document.getElementById(outputId);
     input.focus();
     input.addEventListener('blur', () => {
         input.focus();

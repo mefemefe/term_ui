@@ -1,3 +1,5 @@
+import { userIpId } from "./elemIds.js";
+
 const myKey = 'termIp'
 
 function getLocalIp() {
@@ -20,7 +22,7 @@ async function getIpOnline() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    let user = document.getElementById('userIp');
+    let user = document.getElementById(userIpId);
     let local = getLocalIp()
     if (local) {
         user.innerText = local + ':';
