@@ -36,9 +36,26 @@ const copy = new Command('Copies the current output', () => {
     }
 })
 
+const f11 = new Command('Sets fullscreen', () => {
+    // TODO: this should TOGGLE
+    const element = document.documentElement; // Fullscreen the whole document
+    
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { /* Firefox */
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE/Edge */
+        element.msRequestFullscreen();
+    }
+    return '';
+})
+
 commands.set('?', list);
 commands.set('cls', clear);
 commands.set('cp', copy);
+commands.set('f11', f11)
 commands.set('exit', exit);
 
 // TODO: commandHistory
