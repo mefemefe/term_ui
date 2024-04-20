@@ -1,13 +1,11 @@
-class Command {
-    constructor(description, run, hidden=false) {
-        this.description = description;
-        this.run = run;
-        this.hidden = hidden;
-    }
-}
+import { Command } from "./classes/command.js";
+import { CommandHistory } from "./classes/commandHistory.js";
 
+// CONSTS
+export const commandHistory = new CommandHistory();
 const commands = new Map()
 
+// COMMANDS
 const exit = new Command('Closes this tab', () => {
     window.close();
 })
@@ -16,7 +14,7 @@ const list = new Command('List possible commands', () => {
     let lines = [];
     commands.forEach((value, key) => {
         if (!value.hidden) {
-            lines.push(`${key}: ${value.description}\n`)
+            lines.push(`${key} >> ${value.description}\n`)
         }
     })
     return lines.join('\n');
@@ -52,15 +50,14 @@ const f11 = new Command('Sets fullscreen', () => {
     return '';
 })
 
+// ORDER
 commands.set('?', list);
 commands.set('cls', clear);
 commands.set('cp', copy);
 commands.set('f11', f11)
 commands.set('exit', exit);
 
-// TODO: commandHistory
-export let previousCommand = '';
-
+// RUN
 export function run(text, output) {
     let command = commands.get(text);
     if (command) {
@@ -68,5 +65,5 @@ export function run(text, output) {
     } else {
         output.innerText = `Command "${text}" not recognized, enter "?" to get a list of commands.`;
     }
-    previousCommand = text;
+    commandHistory.push(text);
 }
