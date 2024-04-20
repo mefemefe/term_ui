@@ -1,4 +1,4 @@
-import { run } from "./command.js";
+import { run, previousCommand } from "./command.js";
 import { inputId, outputId } from "./elemIds.js";
 
 
@@ -15,6 +15,10 @@ window.addEventListener('DOMContentLoaded', () => {
             input.value = '';
             if (command) {
                 run(command, output);
+            }
+        } else if (key.key == 'ArrowUp') {
+            if (previousCommand) {
+                input.value = previousCommand;
             }
         }
     })

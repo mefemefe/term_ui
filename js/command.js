@@ -41,6 +41,9 @@ commands.set('cls', clear);
 commands.set('cp', copy);
 commands.set('exit', exit);
 
+// TODO: commandHistory
+export let previousCommand = '';
+
 export function run(text, output) {
     let command = commands.get(text);
     if (command) {
@@ -48,4 +51,5 @@ export function run(text, output) {
     } else {
         output.innerText = `Command "${text}" not recognized, enter "?" to get a list of commands.`;
     }
+    previousCommand = text;
 }
