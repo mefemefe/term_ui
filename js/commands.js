@@ -17,7 +17,7 @@ const list = new Command('List possible commands', () => {
             lines.push(`${key} >> ${value.description}\n`)
         }
     })
-    return lines.join('\n');
+    return lines.join('\n') + '\n';
 }, true)
 
 const clear = new Command('Clear output', () => {
@@ -35,7 +35,6 @@ const copy = new Command('Copies the current output', () => {
 })
 
 const f11 = new Command('Sets fullscreen', () => {
-    // TODO: this should TOGGLE
     const element = document.documentElement; // Fullscreen the whole document
     
     if (element.requestFullscreen) {

@@ -1,7 +1,7 @@
 export class CommandHistory {
-    constructor() {
+    constructor(max_length=10) {
         this.commands = [];
-        this.max_length = 10;
+        this.max_length = max_length;
         this.current = 0;
     }
     push(command) {
