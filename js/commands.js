@@ -6,10 +6,6 @@ export const commandHistory = new CommandHistory();
 const commands = new Map()
 
 // COMMANDS
-const exit = new Command('Closes this tab', () => {
-    window.close();
-})
-
 const list = new Command('List possible commands', () => {
     let lines = [];
     commands.forEach((value, key) => {
@@ -54,7 +50,6 @@ commands.set('?', list);
 commands.set('cls', clear);
 commands.set('cp', copy);
 commands.set('f11', f11)
-commands.set('exit', exit);
 
 // RUN
 export function run(text, output) {
