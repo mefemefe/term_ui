@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <title>Terminal</title>
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/blinking.css"> 
 </head>
 <body>
     <div id="date"></div>
+    <br>
     <div class="cli">
-        <span id='userIp'></span> ~/$ <input id="input" autocomplete="off" placeholder="?">
+        <span id='userIp'></span> ~/$ <input id="input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="?" >
     </div>
     <br>
     <p id="output"></p>
     <script src="js/date.js" type="module"></script>
-    <script src="js/input.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
     <script src="js/user.js" type="module"></script>
 </body>
 </html>
