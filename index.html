@@ -9,13 +9,31 @@
 </head>
 <body>
     <div id="date"></div>
-    <div class="cli">
-        <span id='userIp'></span> ~/$ <input id="input" autocomplete="off" placeholder="?">
+    <div id="tag">
+        
+        ▄▄▄▄   ▓█████ ▄▄▄     ▄▄▄█████▓  ██████     ▄▄▄       ███▄    █ ▓█████▄     ▄▄▄▄ ▓██   ██▓▄▄▄█████▓▓█████   ██████ 
+        ▓█████▄ ▓█   ▀▒████▄   ▓  ██▒ ▓▒▒██    ▒    ▒████▄     ██ ▀█   █ ▒██▀ ██▌   ▓█████▄▒██  ██▒▓  ██▒ ▓▒▓█   ▀ ▒██    ▒ 
+        ▒██▒ ▄██▒███  ▒██  ▀█▄ ▒ ▓██░ ▒░░ ▓██▄      ▒██  ▀█▄  ▓██  ▀█ ██▒░██   █▌   ▒██▒ ▄██▒██ ██░▒ ▓██░ ▒░▒███   ░ ▓██▄   
+        ▒██░█▀  ▒▓█  ▄░██▄▄▄▄██░ ▓██▓ ░   ▒   ██▒   ░██▄▄▄▄██ ▓██▒  ▐▌██▒░▓█▄   ▌   ▒██░█▀  ░ ▐██▓░░ ▓██▓ ░ ▒▓█  ▄   ▒   ██▒
+        ░▓█  ▀█▓░▒████▒▓█   ▓██▒ ▒██▒ ░ ▒██████▒▒    ▓█   ▓██▒▒██░   ▓██░░▒████▓    ░▓█  ▀█▓░ ██▒▓░  ▒██▒ ░ ░▒████▒▒██████▒▒
+        ░▒▓███▀▒░░ ▒░ ░▒▒   ▓▒█░ ▒ ░░   ▒ ▒▓▒ ▒ ░    ▒▒   ▓▒█░░ ▒░   ▒ ▒  ▒▒▓  ▒    ░▒▓███▀▒ ██▒▒▒   ▒ ░░   ░░ ▒░ ░▒ ▒▓▒ ▒ ░
+        ▒░▒   ░  ░ ░  ░ ▒   ▒▒ ░   ░    ░ ░▒  ░ ░     ▒   ▒▒ ░░ ░░   ░ ▒░ ░ ▒  ▒    ▒░▒   ░▓██ ░▒░     ░     ░ ░  ░░ ░▒  ░ ░
+        ░    ░    ░    ░   ▒    ░      ░  ░  ░       ░   ▒      ░   ░ ░  ░ ░  ░     ░    ░▒ ▒ ░░    ░         ░   ░  ░  ░  
+        ░         ░  ░     ░  ░              ░           ░  ░         ░    ░        ░     ░ ░                 ░  ░      ░  
+        ░                                                           ░               ░░ ░                              
     </div>
+    <div class="cli">
+        <span id='userIp'></span> ~/$ <input id="input" autocomplete="off" placeholder="?" oninput="this.value = this.value.toLowerCase()">
+    </div>
+    <br>
+    <div id="autocomplete"></div>
     <br>
     <p id="output"></p>
     <script src="js/date.js" type="module"></script>
     <script src="js/input.js" type="module"></script>
     <script src="js/user.js" type="module"></script>
+    <audio controls loop hidden="true";>
+        <source src="music/keygen.mp4" type="audio/mp4">
+    </audio>
 </body>
 </html>

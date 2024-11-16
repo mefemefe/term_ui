@@ -10,9 +10,10 @@ body {
     display: flex;
 }
 
-#date {
+#date, #autocomplete {
     font-size: 0.8em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    height: 0.8em;
 }
 
 #input {
@@ -30,4 +31,10 @@ body {
 
 #output {
     color: rgb(164, 244, 164);
+    white-space: pre-wrap;
+}
+
+#tag {
+    white-space: pre-wrap;
+    font-size: 1vw;
 }

@@ -3,18 +3,22 @@ import { CommandHistory } from "./classes/commandHistory.js";
 
 // CONSTS
 export const commandHistory = new CommandHistory();
-const commands = new Map()
+export const commands = new Map()
 
 // COMMANDS
 const exit = new Command('Closes this tab', () => {
     window.close();
+    return '';
 })
 
 const list = new Command('List possible commands', () => {
     let lines = [];
+    // I want this to justify each key to the length of the longest key...
+    let max_length = commands.keys().reduce((max, key) => Math.max(max, key.length), 0);
     commands.forEach((value, key) => {
         if (!value.hidden) {
-            lines.push(`${key} >> ${value.description}\n`)
+            let _key = key.padEnd(max_length + 1, ' ');
+            lines.push(`${_key} >> ${value.description}\n`)
         }
     })
     return lines.join('\n') + '\n';
@@ -32,6 +36,16 @@ const copy = new Command('Copies the current output', () => {
     } else {
         return 'Output was empty so nothing was copied.'
     }
+})
+
+const music = new Command('Toggle music on/off', () => {
+    let audio = document.querySelector('audio');
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+    return '';
 })
 
 const f11 = new Command('Sets fullscreen', () => {
@@ -52,8 +66,9 @@ const f11 = new Command('Sets fullscreen', () => {
 // ORDER
 commands.set('?', list);
 commands.set('cls', clear);
-commands.set('cp', copy);
-commands.set('f11', f11)
+//commands.set('cp', copy);
+commands.set('f11', f11);
+commands.set('music', music);
 commands.set('exit', exit);
 
 // RUN
