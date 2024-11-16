@@ -5,9 +5,19 @@ body {
     font-size: 1.05em;
 }
 
+body.keyboard-open {
+    /* TODO: */
+    padding-bottom: 200px;
+  }
+
 .cli {
     font-size: 1.75em;
     display: flex;
+}
+
+#date {
+    position: fixed;
+    top: 1%;
 }
 
 #date, #autocomplete {
