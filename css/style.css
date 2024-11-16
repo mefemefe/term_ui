@@ -15,10 +15,10 @@ body.keyboard-open {
     display: flex;
 }
 
-#date {
+/* #date {
     position: fixed;
     top: 1%;
-}
+} */
 
 #date, #autocomplete {
     font-size: 0.8em;

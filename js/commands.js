@@ -1,5 +1,7 @@
 import { Command } from "./classes/command.js";
 import { CommandHistory } from "./classes/commandHistory.js";
+import { reloadTag } from "./tag.js";
+
 
 // CONSTS
 export const commandHistory = new CommandHistory();
@@ -63,12 +65,18 @@ const f11 = new Command('Sets fullscreen', () => {
     return '';
 })
 
+const reloadTagCommand = new Command('Reload banner logo', () => {
+    reloadTag();
+    return '';
+})
+
 // ORDER
 commands.set('?', list);
 commands.set('cls', clear);
 //commands.set('cp', copy);
 commands.set('f11', f11);
 commands.set('music', music);
+commands.set('logo', reloadTagCommand);
 commands.set('exit', exit);
 
 // RUN

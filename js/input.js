@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 input.value = matchingCommands[0];
             }
             if (currentInput && matchingCommands.length > 0) {
-                    auto.innerText = matchingCommands.join(' | ');
+                    auto.innerText = '-> ' + matchingCommands.join(' | ');
             } else {
                 auto.innerText = '';
             }
