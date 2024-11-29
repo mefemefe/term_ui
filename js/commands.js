@@ -1,6 +1,7 @@
 import { Command } from "./classes/command.js";
 import { CommandHistory } from "./classes/commandHistory.js";
 import { reloadTag } from "./tag.js";
+import { toggleTheme } from "./themes.js";
 
 
 // CONSTS
@@ -70,18 +71,25 @@ const reloadTagCommand = new Command('Reload banner logo', () => {
     return '';
 })
 
+const theme = new Command('Toggle theme', () => {
+    toggleTheme();
+    return '';
+})
+
 // ORDER
 commands.set('?', list);
 commands.set('cls', clear);
 //commands.set('cp', copy);
 commands.set('f11', f11);
-commands.set('music', music);
 commands.set('logo', reloadTagCommand);
+commands.set('music', music);
+commands.set('theme', theme);
 commands.set('exit', exit);
 
 // RUN
 export function run(text, output) {
-    let command = commands.get(text);
+    let command = commands.get(text.split(' ', 1)[0]);
+    let args = text.split(' ', 1).slice(1);
     if (command) {
         output.innerText = command.run();
     } else {

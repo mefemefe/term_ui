@@ -1,8 +1,35 @@
-body {
+:root {
     background-color: black;
     color: #00FF00;
     font-family: monospace;
     font-size: 1.05em;
+}
+
+[data-theme="dark"] {
+    --background-color: black;
+    background-color: var(--background-color);
+    --color: white;
+    color: var(--color);
+    --ip-color: yellow;
+    --tag-color: rgb(189, 4, 189);
+}
+
+[data-theme="light"] {
+    --background-color: white;
+    background-color: var(--background-color);
+    --color: black;
+    color: var(--color);
+    --ip-color: #F51818;
+    --tag-color: #86B300;
+}
+
+[data-theme="ubuntu"] {
+    --background-color: #772953;
+    background-color: var(--background-color);
+    --color: white;
+    color: var(--color);
+    --ip-color: rgb(68, 250, 159);
+    --tag-color: rgb(69, 160, 252);
 }
 
 body.keyboard-open {
@@ -24,6 +51,11 @@ body.keyboard-open {
     font-size: 0.8em;
     margin-bottom: 0.5em;
     height: 0.8em;
+    color: var(--ip-color);
+}
+
+#userIp {
+    color: var(--ip-color);
 }
 
 #input {
@@ -31,20 +63,21 @@ body.keyboard-open {
     font-size: 1em;
     font-weight: 800;
     width: 100%;
-    background-color: black;
+    background-color: var(--background-color);
     border: 0;
     outline: none;
-    color: #00FF00;
+    color: var(--color);
     font-family: monospace;
-    caret-color: #00FF00;
+    caret-color: var(--color);
 }
 
 #output {
-    color: rgb(164, 244, 164);
+    color: var(--color);
     white-space: pre-wrap;
 }
 
 #tag {
     white-space: pre-wrap;
     font-size: 1vw;
+    color: var(--tag-color);
 }
